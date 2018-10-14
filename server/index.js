@@ -6,4 +6,4 @@ const apiServer = require("./api");
 app.use(express.static("dist"));
 app.use("/api", apiServer);
 
-app.listen(3000, () => console.log("Running at :3000"));
+app.listen(3001, () => console.log("Running at :3001"));
