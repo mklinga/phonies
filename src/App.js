@@ -1,28 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import { getPhoneList } from "./selectors";
+import { fetchPhones as fetchPhonesAction } from "./actions";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchPhones();
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1>Phone viewer</h1>
         </header>
+        <main>List of phones...</main>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  phones: getPhoneList(state)
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchPhones: () => dispatch(fetchPhonesAction())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
