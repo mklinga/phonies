@@ -1,9 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
+import PhoneImage from "../PhoneImage";
 import { PhoneType } from "../types";
 
-const makeImageUrl = image => `/images/${image}`;
+const ItemWrapper = styled.div`
+  flex: 1 0 45%;
+  margin: 5px;
+  cursor: pointer;
+
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+`;
+
+const ItemHeader = styled.h2`
+  margin: 0 0 10px 0;
+  background: #eee;
+  padding: 8px 16px;
+`;
 
 const DetailSection = styled.div`
   display: flex;
@@ -13,8 +29,6 @@ const DetailSection = styled.div`
   }
 
   padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
 `;
 
 const FactSection = styled.div`
@@ -33,38 +47,64 @@ const Fact = styled.span`
   color: black;
 `;
 
-export const PhoneDetailComponent = ({ phone }) => (
-  <DetailSection>
-    <div>
-      <img src={makeImageUrl(phone.image)} />
-    </div>
-    <div>
-      <FactSection>
-        <Key>Manufacturer</Key>
-        <Fact>{phone.manufacturer}</Fact>
-      </FactSection>
-      <FactSection>
-        <Key>Model</Key>
-        <Fact>{phone.model}</Fact>
-      </FactSection>
-      <FactSection>
-        <Key>Year published</Key>
-        <Fact>{phone.year}</Fact>
-      </FactSection>
-      <FactSection>
-        <Key>Screen size</Key>
-        <Fact>{`${phone.screen_size}"`}</Fact>
-      </FactSection>
-      <FactSection>
-        <Key>Color</Key>
-        <Fact>{phone.color}</Fact>
-      </FactSection>
-    </div>
-  </DetailSection>
+const DetailsButton = styled.button`
+  margin: 5px 8px;
+  color: white;
+  padding: 8px 16px;
+  background: #e67e22;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+
+  &:hover,
+  &:focus {
+    background-color: #d35400;
+    cursor: pointer;
+  }
+`;
+
+export const PhoneDetailComponent = ({ phone, fullDetails, onSelect }) => (
+  <ItemWrapper>
+    <ItemHeader>
+      {phone.manufacturer} {phone.model}
+    </ItemHeader>
+    <DetailSection>
+      <PhoneImage phone={phone} />
+      <div>
+        <FactSection>
+          <Key>Manufacturer</Key>
+          <Fact>{phone.manufacturer}</Fact>
+        </FactSection>
+        <FactSection>
+          <Key>Model</Key>
+          <Fact>{phone.model}</Fact>
+        </FactSection>
+        <FactSection>
+          <Key>Published</Key>
+          <Fact>{phone.year}</Fact>
+        </FactSection>
+        {fullDetails ? (
+          <React.Fragment>
+            <FactSection>
+              <Key>Color</Key>
+              <Fact>{phone.color}</Fact>
+            </FactSection>
+            <FactSection>
+              <Key>Screen size</Key>
+              <Fact>{phone.screen_size}"</Fact>
+            </FactSection>
+          </React.Fragment>
+        ) : (
+          <DetailsButton onClick={() => onSelect(phone)}>Details</DetailsButton>
+        )}
+      </div>
+    </DetailSection>
+  </ItemWrapper>
 );
 
 PhoneDetailComponent.propTypes = {
-  phone: PhoneType.isRequired
+  phone: PhoneType.isRequired,
+  fullDetails: PropTypes.bool
 };
 
 export default PhoneDetailComponent;

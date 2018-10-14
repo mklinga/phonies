@@ -30,6 +30,16 @@ export default function(state = initialState, action) {
         isFetching: false,
         phones: []
       };
+    case actionTypes.PHONELIST.SELECT_FOR_DETAILS:
+      return {
+        ...state,
+        selected: action.phone
+      };
+    case actionTypes.PHONELIST.RESET_DETAILS:
+      return {
+        ...state,
+        selected: null
+      };
     default:
       return state;
   }
