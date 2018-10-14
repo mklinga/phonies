@@ -8,6 +8,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  background: #fafafa;
+}
+
 * {
   box-sizing: border-box;
 }
