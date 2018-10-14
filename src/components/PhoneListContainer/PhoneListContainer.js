@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
@@ -10,6 +11,11 @@ import Error from "../Error";
 
 import PhoneListItem from "./PhoneListItem";
 import { PhoneType } from "./types";
+
+const PhoneListWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 export class PhoneListContainer extends React.Component {
   static propTypes = {
@@ -36,11 +42,11 @@ export class PhoneListContainer extends React.Component {
     }
 
     return (
-      <div>
+      <PhoneListWrapper>
         {this.props.phones.map(phone => (
           <PhoneListItem key={phone.id} phone={phone} />
         ))}
-      </div>
+      </PhoneListWrapper>
     );
   }
 }
