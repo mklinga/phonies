@@ -1,0 +1,50 @@
+[
+  {
+    "manufacturer": "Samsung",
+    "model": "Galaxy A9",
+    "year": 2018,
+    "color": "Caviar black",
+    "screen_size": 6.3,
+    "image": "samsung-galaxy-a9-2018.jpg"
+  },
+  {
+    "manufacturer": "Samsung",
+    "model": "Galaxy Note9",
+    "year": 2018,
+    "color": "Midnight black",
+    "screen_size": 6.4,
+    "image": "samsung-galaxy-note9-r1.jpg"
+  },
+  {
+    "manufacturer": "Xiaomi",
+    "model": "Redmi Note 6 Pro",
+    "year": 2018,
+    "color": "Red",
+    "screen_size": 6.26,
+    "image": "xiaomi-redmi-note-6-pro-r.jpg"
+  },
+  {
+    "manufacturer": "Google",
+    "model": "Pixel 3",
+    "year": 2018,
+    "color": "Not Pink",
+    "screen_size": 5.5,
+    "image": "google-pixel-3-.jpg"
+  },
+  {
+    "manufacturer": "Apple",
+    "model": "iPhone XS Max",
+    "year": 2018,
+    "color": "Gold",
+    "screen_size": 6.5,
+    "image": "apple-iphone-xs-max-new1.jpg"
+  },
+  {
+    "manufacturer": "Nokia",
+    "model": "3.1 Plus",
+    "year": 2018,
+    "color": "Blue",
+    "screen_size": 6.0,
+    "image": "nokia-31-plus-.jpg"
+  }
+]
