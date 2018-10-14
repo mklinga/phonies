@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "manufacturer": "Samsung",
     "model": "Galaxy A9",
     "year": 2018,
@@ -8,6 +9,7 @@
     "image": "samsung-galaxy-a9-2018.jpg"
   },
   {
+    "id": "2",
     "manufacturer": "Samsung",
     "model": "Galaxy Note9",
     "year": 2018,
@@ -16,6 +18,7 @@
     "image": "samsung-galaxy-note9-r1.jpg"
   },
   {
+    "id": "3",
     "manufacturer": "Xiaomi",
     "model": "Redmi Note 6 Pro",
     "year": 2018,
@@ -24,6 +27,7 @@
     "image": "xiaomi-redmi-note-6-pro-r.jpg"
   },
   {
+    "id": "4",
     "manufacturer": "Google",
     "model": "Pixel 3",
     "year": 2018,
@@ -32,6 +36,7 @@
     "image": "google-pixel-3-.jpg"
   },
   {
+    "id": "5",
     "manufacturer": "Apple",
     "model": "iPhone XS Max",
     "year": 2018,
@@ -40,6 +45,7 @@
     "image": "apple-iphone-xs-max-new1.jpg"
   },
   {
+    "id": "6",
     "manufacturer": "Nokia",
     "model": "3.1 Plus",
     "year": 2018,

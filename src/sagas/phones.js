@@ -11,7 +11,9 @@ export function* fetchPhones(action) {
       data: response.data
     });
   } catch (error) {
-    console.error(error);
-    yield put({ type: actionTypes.PHONELIST.FETCH_FAILURE, error });
+    yield put({
+      type: actionTypes.PHONELIST.FETCH_FAILURE,
+      error: error.message
+    });
   }
 }
