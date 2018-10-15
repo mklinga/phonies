@@ -33,7 +33,7 @@ export default class App extends Component {
           <Title>Phone viewer</Title>
         </Header>
         <MainContainer>
-          <PhoneListContainer phones={this.props.phones} />
+          <PhoneListContainer />
         </MainContainer>
       </AppContainer>
     );
