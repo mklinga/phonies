@@ -1,4 +1,4 @@
-export const getPhoneList = state => state.phoneList.phones;
+export const getPhones = state => state.phoneList.phones;
 
 export const getError = state => state.phoneList.error;
 

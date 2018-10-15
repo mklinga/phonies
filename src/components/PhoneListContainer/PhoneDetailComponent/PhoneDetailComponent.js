@@ -3,19 +3,19 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 import PhoneImage from "../PhoneImage";
+import Fact from "../Fact";
 import { PhoneType } from "../types";
 
-const ItemWrapper = styled.div`
+const PhoneDetailContainer = styled.div`
   flex: 1 0 45%;
   margin: 5px;
-  cursor: pointer;
 
   padding: 0;
   border: 1px solid #ddd;
   border-radius: 6px;
 `;
 
-const ItemHeader = styled.h2`
+const Title = styled.h2`
   margin: 0 0 10px 0;
   background: #eee;
   padding: 8px 16px;
@@ -29,22 +29,6 @@ const DetailSection = styled.div`
   }
 
   padding: 15px;
-`;
-
-const FactSection = styled.div`
-  padding: 3px 10px;
-`;
-
-const Key = styled.span`
-  font-weight: bold;
-  &:after {
-    content: ":";
-  }
-  padding-right: 8px;
-`;
-
-const Fact = styled.span`
-  color: black;
 `;
 
 const DetailsButton = styled.button`
@@ -64,42 +48,27 @@ const DetailsButton = styled.button`
 `;
 
 export const PhoneDetailComponent = ({ phone, fullDetails, onSelect }) => (
-  <ItemWrapper>
-    <ItemHeader>
+  <PhoneDetailContainer>
+    <Title>
       {phone.manufacturer} {phone.model}
-    </ItemHeader>
+    </Title>
     <DetailSection>
       <PhoneImage phone={phone} />
       <div>
-        <FactSection>
-          <Key>Manufacturer</Key>
-          <Fact>{phone.manufacturer}</Fact>
-        </FactSection>
-        <FactSection>
-          <Key>Model</Key>
-          <Fact>{phone.model}</Fact>
-        </FactSection>
-        <FactSection>
-          <Key>Published</Key>
-          <Fact>{phone.year}</Fact>
-        </FactSection>
+        <Fact label="Manufacturer" data={phone.manufacturer} />
+        <Fact label="Model" data={phone.model} />
+        <Fact label="Published" data={phone.year} />
         {fullDetails ? (
           <React.Fragment>
-            <FactSection>
-              <Key>Color</Key>
-              <Fact>{phone.color}</Fact>
-            </FactSection>
-            <FactSection>
-              <Key>Screen size</Key>
-              <Fact>{phone.screen_size}"</Fact>
-            </FactSection>
+            <Fact label="Color" data={phone.color} />
+            <Fact label="Screen size" data={phone.screen_size} />
           </React.Fragment>
         ) : (
           <DetailsButton onClick={() => onSelect(phone)}>Details</DetailsButton>
         )}
       </div>
     </DetailSection>
-  </ItemWrapper>
+  </PhoneDetailContainer>
 );
 
 PhoneDetailComponent.propTypes = {

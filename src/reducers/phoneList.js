@@ -8,7 +8,6 @@ const initialState = {
 };
 
 export default function(state = initialState, action) {
-  console.log(action, ""); // TODO: remove when done
   switch (action.type) {
     case actionTypes.PHONELIST.FETCH_REQUEST:
       return {

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import {
-  getPhoneList,
+  getPhones,
   getError,
   getIsFetchingPhones,
   getSelectedPhone
@@ -37,6 +37,7 @@ const ReturnLink = styled.span`
   color: blue;
   cursor: pointer;
 `;
+
 export class PhoneListContainer extends React.Component {
   static propTypes = {
     phones: PropTypes.arrayOf(PhoneType)
@@ -93,7 +94,7 @@ export class PhoneListContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  phones: getPhoneList(state),
+  phones: getPhones(state),
   selectedPhone: getSelectedPhone(state),
   isFetching: getIsFetchingPhones(state),
   error: getError(state)
